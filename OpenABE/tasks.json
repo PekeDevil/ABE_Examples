@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: g++ build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"${file}",
+				"-I/home/<path_to_library>/libopenabe-1.0.0/", // modify as required
+				"-L/home/<path_to_library>/libopenabe-1.0.0/root/lib",// modify as required
+				"-L/home/<path_to_library>/libopenabe-1.0.0/deps/root/lib",// modify as required
+                "-lcrypto", "-lrelic", "-lrelic_ec", "-lopenabe",// modify as required
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

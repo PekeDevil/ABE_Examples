@@ -12,8 +12,6 @@
     - [Recommended Python Version](#recommended-python-version)
     - [About Dependencies](#about-dependencies)
     - [Virtual Environment](#virtual-environment)
-  - [Rabe Installation](#rabe-installation)
-  - [GoFE Installation](#gofe-installation)
   - [OpenABE Installation](#openabe-installation)
 - [Credit where credit is due](#credit-where-credit-is-due)
 
@@ -61,8 +59,7 @@ In addition, a common way to use ABE encryption is in a hybrid form with a symme
 
 ## OpenABE
 
-- W11: [Original Paper](https://www.iacr.org/archive/pkc2011/65710055/65710055.pdf) - [Docs] - [Time Test] TO DO - [Example]
-- GPSW06: [Original Paper](https://eprint.iacr.org/2006/309.pdf?ref=https://githubhelp.com) - [Docs] [Time Test] TO DO - [Example]
+- W11: [Original Paper](https://www.iacr.org/archive/pkc2011/65710055/65710055.pdf) - [Docs](https://github.com/zeutro/openabe/tree/master/docs) - [Time Test](OpenABE/W11_TimeTest.cpp) - [Example](OpenABE/W11_Example.cpp)
 
 # A note on installation:
 
@@ -98,17 +95,15 @@ It is quite possible that you don't need to do this and that some of my problems
 
 However, if you are still having problems, [this tutorial](https://lrusso96.github.io/blog/cryptography/2021/03/04/charm-setup.html) was the one I followed to successfully install Charm.
 
-## Rabe Installation
-
-TO DO
-
-## GoFE Installation
-
-TO DO
-
 ## OpenABE Installation
 
-TO DO
+The original OpenABE library does not support compilation on ARM architectures. Therefore, [IBM](https://github.com/IBM/openabe/tree/master) modified the makefile used by OpenABE to compile relic. In this way, IBM was able to [make it ARM-compatible](https://github.com/IBM/openabe/blob/master/src/Makefile#L35).
+
+The main modifications are related to the [parameters](https://github.com/IBM/openabe/blob/12ea3e4cc64f779e9e938652543e09dac62fb0db/src/Makefile#L35) with which relic is compiled. However, these modifications were insufficient to run OpenABE on ARMv6.
+
+Therefore the makefile was modified again following the help of the [relic repository](https://github.com/relic-toolkit/relic/issues/211). The [final result](https://github.com/zeutro/openabe/blob/b8f9d3c8a2620c1185ca972248f7af39c1eae68c/deps/relic/Makefile) was used to compile OpenABE on both ARMv6 and ARMv8.
+
+Finally another common problem in the OpenABE installation is that it uses the [GoogleTest](https://github.com/google/googletest), and the location of the files in this repository often varies. Therefore it may be necessary to modify the [download_gtest.sh](https://github.com/zeutro/openabe/blob/master/deps/gtest/download_gtest.sh) file and adjust the [GTEST_LINK](https://github.com/zeutro/openabe/blob/b8f9d3c8a2620c1185ca972248f7af39c1eae68c/deps/gtest/download_gtest.sh#L10C1-L10C11).
 
 ---
 
