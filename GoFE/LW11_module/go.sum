@@ -1,0 +1,10 @@
+github.com/fentec-project/bn256 v0.0.0-20190726093940-0d0fc8bfeed0 h1:mkWVpEiA+MMlWxElUXRqTVSH9eETZvqJ21NZTaDaMiI=
+github.com/fentec-project/bn256 v0.0.0-20190726093940-0d0fc8bfeed0/go.mod h1:llEBqR6SDQxLj2lH10BjIYPrcoqDAFv6mhsqvHfIzlI=
+github.com/fentec-project/gofe v0.0.0-20211122085119-8c049a5e3638 h1:v9HaFld7YlpXZNB6ot3ElPcyxzrRNND8X7OKyLu5aDA=
+github.com/fentec-project/gofe v0.0.0-20211122085119-8c049a5e3638/go.mod h1:L8BwMRmIIEVQK1Un7rpnuOhex40gk4Quu50C8v34QFc=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+golang.org/x/crypto v0.0.0-20211115234514-b4de73f9ece8 h1:5QRxNnVsaJP6NAse0UdkRgL3zHMvCRRkrDVLNdNpdy4=
+golang.org/x/crypto v0.0.0-20211115234514-b4de73f9ece8/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
+golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1 h1:SrN+KX8Art/Sf4HNj6Zcz06G7VEz+7w9tdXTPOZ7+l4=
+golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=

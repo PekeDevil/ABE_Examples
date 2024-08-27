@@ -49,15 +49,15 @@ In addition, a common way to use ABE encryption is in a hybrid form with a symme
 
 ## Rabe
 
-- BSW07: [Original Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4223236&casa_token=sh82htu2-PsAAAAA:O3yMQkIpQ0tznUxEknLy0M8iwYZNGuS0fYbgMYAr5gIY9kHrq6cmnLocQ6TZNqsSnSPUCLvWnEyH&tag=1) - [Docs] - [Time Test] TO DO - [Example]
-- FAME (KP-ABE): [Original Paper](https://eprint.iacr.org/2017/807.pdf?ref=https://githubhelp.com) - [Docs] - [Time Test] TO DO - [Example]
-- LW11: [Original Paper](https://eprint.iacr.org/2010/351) [Docs] - [Time Test] TO DO - [Example]
-- YCT14: [Original Paper](https://www.sciencedirect.com/science/article/abs/pii/S0167739X14002039?via%3Dihub) - [Docs] - [Time Test] TO DO - [Example]
+- BSW07: [Original Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=4223236&casa_token=sh82htu2-PsAAAAA:O3yMQkIpQ0tznUxEknLy0M8iwYZNGuS0fYbgMYAr5gIY9kHrq6cmnLocQ6TZNqsSnSPUCLvWnEyH&tag=1) - [Docs](https://docs.rs/rabe/0.4.0/rabe/schemes/bsw/index.html) - [Time Test](Rabe/rabe_BSW07/benches/bench_BSW07.rs) - [Example](Rabe/rabe_BSW07/src/lib.rs)
+- FAME (KP-ABE): [Original Paper](https://eprint.iacr.org/2017/807.pdf?ref=https://githubhelp.com) - [Docs](https://docs.rs/rabe/0.4.0/rabe/schemes/ac17/index.html) - [Time Test](Rabe/rabe_KPABEFAME/benches/bench_ac17kpabe.rs) - [Example](Rabe/rabe_KPABEFAME/src/lib.rs)
+- LW11: [Original Paper](https://eprint.iacr.org/2010/351) [Docs](https://docs.rs/rabe/0.4.0/rabe/schemes/aw11/index.html) - [Time Test](Rabe/rabe_LW11/benches/bench_lw11.rs) - [Example](Rabe/rabe_LW11/src/lib.rs)
+- YCT14: [Original Paper](https://www.sciencedirect.com/science/article/abs/pii/S0167739X14002039?via%3Dihub) - [Docs](https://docs.rs/rabe/0.4.0/rabe/schemes/yct14/index.html) - [Time Test](Rabe/rabe_YCT14/benches/bench_yct14.rs) - [Example](Rabe/rabe_YCT14/src/lib.rs)
 
 ## GoFE
 
-- FAME (KP-ABE): [Original Paper](https://eprint.iacr.org/2017/807.pdf?ref=https://githubhelp.com) - [Docs] - [Time Test] TO DO - [Example]
-- LW11: [Original Paper](https://eprint.iacr.org/2010/351) - [Docs] - [Time Test] TO DO - [Example]
+- FAME (KP-ABE): [Original Paper](https://eprint.iacr.org/2017/807.pdf?ref=https://githubhelp.com) - [Docs](https://github.com/fentec-project/gofe?tab=readme-ov-file#use-the-scheme-(examples)) - [Time Test](GoFE/FAME/pkg_test.go) - [Example](GoFE/FAME/main.go)
+- LW11: [Original Paper](https://eprint.iacr.org/2010/351) - [Docs](https://github.com/fentec-project/gofe?tab=readme-ov-file#use-the-scheme-(examples)) - [Time Test](GoFE/LW11_module/LW11_test.go) - [Example](GoFE/LW11_module/LW11.go)
 
 ## OpenABE
 
@@ -65,6 +65,7 @@ In addition, a common way to use ABE encryption is in a hybrid form with a symme
 - GPSW06: [Original Paper](https://eprint.iacr.org/2006/309.pdf?ref=https://githubhelp.com) - [Docs] [Time Test] TO DO - [Example]
 
 # A note on installation:
+
 These experiments were conducted on a Raspberry PI Zero and a Raspberry PI 4 between 2022 and 2023. Thus, it is recommended that all the information in this repository be used as a guideline and that things may have changed over time.
 
 Due to the architectures of these boards, it was sometimes necessary to make certain modifications to perform the installations correctly.
@@ -74,12 +75,15 @@ The main limitation of the Raspberry Pi Zero was its ARMv6 architecture, which i
 Some of the modifications, tricks, and shortcuts used to install the libraries this repository provides examples of are described below.
 
 ## Charm Installation
+
 ### Recommended Python Version
 
 For best compatibility, it is recommended to use Python versions 3.8 to 3.10. Python 3.12 introduces changes to the longintrepr.h header file location, which may cause issues with the Charm library. For more details, refer to [ this issue discussion.](https://github.com/JHUISI/charm/issues/307#issuecomment-2094110757).
 
 ### About Dependencies
+
 While setting up the environment, you may need to install the following dependencies:
+
 - libssl-dev
 - flex
 - bison
@@ -87,6 +91,7 @@ While setting up the environment, you may need to install the following dependen
 When configuring the mathematical library, Charm offers the possibility to use both PBC and Relic. However, I was unable to perform a successful installation with Relic and ended up using PBC.
 
 ### Virtual Environment
+
 Finally, after several problems with dependencies and installations, I ended up working with Python virtual environments.
 
 It is quite possible that you don't need to do this and that some of my problems came from incompatibilities derived from some versions of dependencies installed on the Raspberries.
@@ -94,12 +99,15 @@ It is quite possible that you don't need to do this and that some of my problems
 However, if you are still having problems, [this tutorial](https://lrusso96.github.io/blog/cryptography/2021/03/04/charm-setup.html) was the one I followed to successfully install Charm.
 
 ## Rabe Installation
+
 TO DO
 
 ## GoFE Installation
+
 TO DO
 
 ## OpenABE Installation
+
 TO DO
 
 ---
